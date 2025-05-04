@@ -306,3 +306,7 @@ FROM basic.trainer
     * 빅쿼리 뿐만 아니라 대부분 프로그래밍 관련 내용 적용
 * 찾는 방법
     * 기술명 + documentation
+
+- - -
+### ✅ 수강완료
+![WEEK_4](../Assignment/Image/WEEK_4.png)
