@@ -258,7 +258,7 @@ SUM(sales) OVER (ORDER BY date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
 3. `DENSE_RANK()`
 - 값이 같으면 같은 순위, 건너뛰지 않음
 
-| 이름 | 급여  | `RANK()` | `DENSE_RANK()` |
+| 이름 | 급여  | `RANK()` | `DENSE_RANK()` | 
 | -- | --- | -------- | -------------- |
 | A  | 100 | 1        | 1              |
 | B  | 100 | 1        | 1              |
@@ -397,7 +397,7 @@ FROM Orders;
 > **이번에는 예린이에게 "윈도우 함수를 쓰지 않고 동일한 결과를 만들어보라"는 미션을 받았습니다. 예린이는 이 작업을 어떻게 해야할지 막막합니다. 예린이를 도와 ROW_NUMBER() 윈도우 함수 없이 동일한 결과를 서브쿼리나 JOIN을 사용해서 작성해보세요.**
 
 ~~~sql 
-# JOINver.
+# JOIN ver.
 SELECT
   Od1.customer_id,
   Od1.order_id, 
@@ -410,6 +410,25 @@ JOIN Orders as Od2
 GROUP BY customer_id
 ORDER BY order_date;
 ~~~
+
+~~~sql
+# Subquery ver. -- ROW_NUMBER() 함수처럼 같은 날짜 안에서도 order_id 기준으로 구분해주기
+SELECT
+  o.customer_id,
+  o.order_id,
+  o.order_date,
+  (
+    SELECT COUNT(*)
+    FROM Orders o2
+    WHERE o2.customer_id = o.customer_id
+      AND (
+           o2.order_date < o.order_date -- 
+        OR (o2.order_date = o.order_date AND o2.order_id <= o.order_id)
+      )
+  ) AS order_rank
+FROM Orders o
+ORDER BY o.customer_id, o.order_date, o.order_id;
+```
 
 
 
