@@ -98,7 +98,55 @@ https://school.programmers.co.kr/learn/courses/30/lessons/133027
 * SubQuery나 RANK 대신 LIMIT으로 간단한 순위 집계가 가능함을 이해한다. 
 ~~~
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+### 15.2.13 SELECT Statement
+✅ MySQL SELECT 실행 순서
+
+| 처리 순서 | 절 이름       | 설명                    |
+| ----- | ---------- | --------------------- |
+| 1️⃣   | `FROM`     | 어떤 테이블에서 데이터를 가져올지 결정 |
+| 2️⃣   | `WHERE`    | 조건에 맞는 **행(row)** 필터링 |
+| 3️⃣   | `GROUP BY` | 특정 컬럼으로 그룹핑 (있다면)     |
+| 4️⃣   | `HAVING`   | 그룹핑된 결과를 다시 필터링       |
+| 5️⃣   | `SELECT`   | 어떤 컬럼을 보여줄지 결정        |
+| 6️⃣   | `ORDER BY` | 정렬 수행 (이때 별칭도 참조 가능)  |
+| 7️⃣   | `LIMIT`    | 반환할 행 수 제한            |
+
+✅ LIMIT 절 설명
+- LIMIT은 SELECT 결과에서 반환할 행 수 또는 행 범위(offset 포함) 를 제한하는 데 사용
+- LIMIT이 서브쿼리 안에 있고, 외부 쿼리에 영향을 미치는 경우, 결과는 정의되지 않음
+| 구문                              | 설명                                   |
+| ------------------------------- | ------------------------------------ |
+| `LIMIT row_count`               | 결과의 **앞에서부터 `row_count`개** 반환        |
+| `LIMIT offset, row_count`       | **`offset + 1`번째부터 `row_count`개** 반환 |
+| `LIMIT row_count OFFSET offset` | 위와 같은 의미 (PostgreSQL 호환 문법)          |
+
+```sql
+SELECT * FROM tbl LIMIT 5, 10; -- 6,10행
+```
+
+✅ LIMIT + ORDER BY를 이용한 TOP-N 쿼리
+```sql
+SELECT *
+FROM your_table
+ORDER BY some_column DESC
+LIMIT N;
+```
+
+✅ SubQuery나 RANK() 대신 LIMIT으로 순위 집계 가능
+```sql
+SELECT name, sales
+FROM employees
+ORDER BY sales DESC
+LIMIT 1;
+```
+
+✅ 언제 LIMIT으로 충분하고, 언제 RANK()가 필요한가?
+| 상황                      | 추천 방법                                           |
+| ----------------------- | ----------------------------------------------- |
+| 상위 N개만 필요할 때            | `ORDER BY` + `LIMIT`                            |
+| 순위 자체(등수)를 보여줘야 할 때     | `RANK()` 같은 윈도우 함수                              |
+| 공동 순위 (동점자)까지 포함하고 싶을 때 | `RANK()` 또는 `DENSE_RANK()`                      |
+| 범위 필터링 (ex: 2\~5등)      | `LIMIT offset, count` 또는 `RANK()`의 `WHERE` 절 사용 |
 
 
 
