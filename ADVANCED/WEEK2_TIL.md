@@ -396,8 +396,19 @@ FROM Orders;
 
 > **이번에는 예린이에게 "윈도우 함수를 쓰지 않고 동일한 결과를 만들어보라"는 미션을 받았습니다. 예린이는 이 작업을 어떻게 해야할지 막막합니다. 예린이를 도와 ROW_NUMBER() 윈도우 함수 없이 동일한 결과를 서브쿼리나 JOIN을 사용해서 작성해보세요.**
 
-~~~
-여기에 답을 작성해주세요!
+~~~sql 
+# JOINver.
+SELECT
+  Od1.customer_id,
+  Od1.order_id, 
+  Od1.order_date, 
+  COUNT(*) AS order_rank
+FROM Orders as Od1 
+JOIN Orders as Od2
+  on Od1.customer_id = Od2.customer_id
+  AND Od1.order_date >= Od2.order_date
+GROUP BY customer_id
+ORDER BY order_date;
 ~~~
 
 
