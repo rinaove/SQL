@@ -189,11 +189,16 @@ UNION ALL
 ~~~
 
 > **쿼리는 잘 작동하긴 하지만, 지역을 더 추가해달라는 권택이의 부탁으로 UNION ALL 블록을 계속 추가하게 되어 관리가 어려울 것 같아서 힘들어하고 있었습니다. 여러분들은 이 쿼리를 윈도우 함수로 변경하여 더 쉽게 리팩토링을 하려고 합니다. 미정이를 도와서 UNION ALL 없이 RANK( ) 또는 ROW_NUMBER( ) 윈도우 함수를 사용해, 각 지역별로 리뷰 수가 가장 많은 상위 2개 식당을 추출하는 쿼리를 작성해보세요.**
-
-
+,
 
 ~~~
-여기에 답을 작성해주세요!
+SELECT region, restaurant_name, review_count
+FROM (
+  SELECT region, restaurant_name, review_count,
+         ROW_NUMBER() OVER (PARTITION BY region ORDER BY review_count DESC) AS rn
+  FROM Restaurants
+) ranked
+WHERE rn <= 2;
 ~~~
 
 
