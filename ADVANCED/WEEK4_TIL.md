@@ -236,12 +236,12 @@ LEFT JOIN Employees e2 ON e1.manager_id = e2.id;
 
 ~~~sql
 WITH RECURSIVE employee_paths AS (
-  SELECT id, name, manager_id, 1 AS depth -- 비재귀 영역 설정 (상위 관리자)
+  SELECT id, name, manager_id, 0 AS depth -- 비재귀 영역 설정 (상위 관리자)
   FROM Employees
   WHERE manager_id IS NULL
 
   UNION ALL
-  SELECT e.id, e.name, ep.name AS manager_name, ep.depth  + 1
+  SELECT e.id, e.name, e.manager_id, ep.depth + 1 -- 재귀 영역 설정 (하위 관리자)
   FROM employees e
   JOIN employee_paths ep ON e.manager_id = ep.id 
 )
