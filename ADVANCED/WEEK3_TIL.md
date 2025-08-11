@@ -66,7 +66,7 @@
 https://leetcode.com/problems/rank-scores/
 
 > LeetCode 178. Rank Scores
->
+> <img width="1413" height="508" alt="image" src="https://github.com/user-attachments/assets/098f3381-244a-4457-80b8-6880d693aabd" />
 > 학습 포인트 : DENSE_RANK( )를 활용하여 점수별 순위 부여, 동점자 처리, 윈도우 함수 복습 
 
 https://school.programmers.co.kr/learn/courses/30/lessons/133027
@@ -76,7 +76,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/133027
 > Hint
 >
 > - 문제 핵심은 '총 주문량 합산' 입니다. 
->
+> <img width="1439" height="463" alt="image" src="https://github.com/user-attachments/assets/12df73db-3404-4360-90ff-12c0b8e40704" />
 > - 두 테이블을 '세로로' 합쳐야합니다. 
 >   - 저희는 이 부분을 1주차에 `UNION ALL` 을 통해 방법을 배웠습니다. 
 > - 합쳐진 테이블에서 FLAVOR 별로 그룹화해 주문량을 합산하셍.
@@ -191,7 +191,7 @@ UNION ALL
 > **쿼리는 잘 작동하긴 하지만, 지역을 더 추가해달라는 권택이의 부탁으로 UNION ALL 블록을 계속 추가하게 되어 관리가 어려울 것 같아서 힘들어하고 있었습니다. 여러분들은 이 쿼리를 윈도우 함수로 변경하여 더 쉽게 리팩토링을 하려고 합니다. 미정이를 도와서 UNION ALL 없이 RANK( ) 또는 ROW_NUMBER( ) 윈도우 함수를 사용해, 각 지역별로 리뷰 수가 가장 많은 상위 2개 식당을 추출하는 쿼리를 작성해보세요.**
 ,
 
-~~~
+~~~sql
 SELECT region, restaurant_name, review_count
 FROM (
   SELECT region, restaurant_name, review_count,
