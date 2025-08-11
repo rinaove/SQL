@@ -59,13 +59,13 @@
 - https://leetcode.com/problems/find-users-with-valid-e-mails/description/
 
 > LeetCode 1517. Find Users With Valid E-mails
->
+> <img width="1430" height="564" alt="image" src="https://github.com/user-attachments/assets/2cc3a023-afd0-46df-965c-c8f3b5f08eb2" />
 > 학습 포인트 : REGEXP를 활용한 이메일 유효성 검사 
 
 - https://leetcode.com/problems/employees-with-missing-information/description/
 
 > LeetCode 1965. Employees With Missing Information
->
+> <img width="1426" height="623" alt="image" src="https://github.com/user-attachments/assets/72e779ec-08b8-4ea8-b111-e89159a07f02" />
 > 학습 포인트 : REGEXP를 이용해 NULL 이 아닌 빈 문자열, 공백 등 이상값을 감지하기
 
 **물론 REGEXP 없이 풀 수 있는 문제입니다. 하지만, 정규 표현식을 학습 한 만큼, 최대한 정규 표현식을 활용해서 문제를 풀어주세요**
