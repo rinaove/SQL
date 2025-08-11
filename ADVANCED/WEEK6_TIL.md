@@ -191,9 +191,23 @@ WHERE email REGEXP '(@gmail\\.com|@naver\\.com)$';
 
 1. > 위 쿼리가 어떤 의미인지 설명하고, LIKE로 동일한 결과를 내는 방법도 함께 제시해보세요.
 
+```sql
+도메인이 gmail이거나 naver인지 검사하는 쿼리
+
+SELECT *
+FROM customers
+WHERE email LIKE '%@gmail.com' OR email LIKE '%@naver.com';
+```
+
 2. > email이 빈 문자열이거나 NULL인 경우는 어떻게 처리해야 할지 고민해보세요.
 
+```sql
+두 도메인 주소만 사람들을 필터링하는 쿼리라서 빈 무자열인 경우나 NULL인 경우를 추가로 무시하는 조건절 넣어주기
 
+WHERE email IS NOT NULL 
+  AND email <> '' 
+  AND email REGEXP '(@gmail\\.com|@naver\\.com)$';
+```
 
 > **🧚운영팀장인 지민이는 학회원 데이터에서 핸드폰 번호 형식을 점검하는 업무를 맡았습니다. 핸드폰 번호는 반드시 010으로 시작하고, 중간과 끝은 각각 4자리 숫자로 구성되어야 하며, 각 구간은 하이픈(-)으로 구분되어야 합니다. 예: 010-1234-5678 **
 >
@@ -226,12 +240,11 @@ WHERE email REGEXP '(@gmail\\.com|@naver\\.com)$';
 
 
 
+~~~sql
+SELECT *
+FROM Student
+WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 ~~~
-여기에 쿼리를 작성해주세요.
-~~~
-
-
-
 
 
 <!-- 한 학기동안 SQL_ADVANCED 과제를 수행하느라 고생 많으셨습니다. 많이 부족했던 과제일 수 있지만, 과제를 하면서 SQL 지식이 성장했었다면 좋겠습니다. -->
