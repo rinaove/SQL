@@ -74,9 +74,13 @@ https://school.programmers.co.kr/learn/courses/30/lessons/131123
 
 > 즐겨찾기가 가장 많은 식당 정보 출력하기 (GROUP BY, SubQuery) : Lev 3
 
+<img width="1438" height="475" alt="image" src="https://github.com/user-attachments/assets/9dba6f2d-909e-449b-ad97-0da448b01389" />
+
+
 https://school.programmers.co.kr/learn/courses/30/lessons/131115
 
 > 가격이 제일 비싼 식품의 정보 출력하기 (SUM, MAX, MIN, SubQuery) : Lev 2
+<img width="1437" height="440" alt="image" src="https://github.com/user-attachments/assets/273aa023-5c46-4101-9258-f8c4a6e60935" />
 
 
 
@@ -472,11 +476,6 @@ cte1 → cte2 → cte1 (순환 참조 불가)
 
 예를 들어 같은 이름의 CTE와 테이블이 있다면, CTE가 우선됨
 
-● 기타 사항
-MySQL 8.0.14 이전에는 CTE 내부에서 외부 쿼리의 컬럼을 참조하는 outer reference 사용이 불가능했습니다.
-
-MySQL 8.0.14 이상에서는 이 제한이 해제되어 표준 SQL처럼 외부 컬럼 참조가 가능해졌습니다.
-
 
 <br>
 
@@ -505,8 +504,14 @@ GROUP BY customer_id;
 
 
 
-~~~
-여기에 답을 작성해주세요!
+~~~sql
+SELECT customer_id, COUNT(*) AS recent_order_count
+FROM (
+  SELECT customer_id
+  FROM Orders
+  WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+) AS RecentOrders
+GROUP BY customer_id;
 ~~~
 
 
