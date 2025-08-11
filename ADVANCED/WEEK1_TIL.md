@@ -85,11 +85,16 @@ https://leetcode.com/problems/customers-who-never-order/
 >
 > 학습 포인트 : 주문 내역이 없는 고객을 찾기 위한 패턴 익히기  
 
+<img width="1425" height="509" alt="image" src="https://github.com/user-attachments/assets/dfac694a-4783-47ed-bd95-a829adb3b49b" />
+
+
 https://leetcode.com/problems/department-highest-salary/description/
 
 > LeetCode 184. Department Highest Salary
 >
 > 학습 포인트 : 부서별 최고 연봉자 추출을 위한 **그룹별 정렬 / 필터링** 방식 이해하기
+
+<img width="1427" height="579" alt="image" src="https://github.com/user-attachments/assets/041cc05c-4011-405c-a881-e74281d3e798" />
 
 
 
@@ -342,7 +347,6 @@ https://leetcode.com/problems/department-highest-salary/description/
   ```
 
 
-
 <br>
 
 <br>
@@ -366,7 +370,9 @@ SELECT name FROM blackList;
 <br>
 
 ~~~
-여기에 답을 작성해주세요!
+member 테이블이 블랙리스트 이름을 포함한 테이블임을 가정했을 때, 두 테이블(member, blackList)를 합치면 blacklist 값이 UNION으로 인해 사라진다.
+고유 이름이 필요하다면 UNION
+블랙리스트 이름을 포함해 몇 번 등장했는지 빈도를 세고 싶다면 UNION ALL을 쓰는게 좋다.
 ~~~
 
 
