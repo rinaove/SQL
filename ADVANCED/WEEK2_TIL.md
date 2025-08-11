@@ -1,4 +1,4 @@
-# SQL_ADVANCED 2주차 정규 과제 
+<img width="1425" height="625" alt="image" src="https://github.com/user-attachments/assets/812e5d11-6d77-4103-be95-f859c6f76a22" /># SQL_ADVANCED 2주차 정규 과제 
 
 ## Week 2 : 윈도우 함수 (Window Functions)
 
@@ -49,7 +49,7 @@
 > - 14.19.1 Aggregate Function Descriptions : MySQL 공식문서
 >
 > https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html
->
+> 
 > (한국어 버전)
 >
 
@@ -76,19 +76,18 @@
 https://leetcode.com/problems/department-top-three-salaries/
 
 > LeetCode 185. Department Top Three Salaries 
->
+> <img width="1429" height="518" alt="image" src="https://github.com/user-attachments/assets/6e6a05a6-33ee-4d70-8ae5-803caefd4200" />
 > 학습 포인트 : DENSE_RANK( ) + PARTITION BY 사용으로 그룹 내 상위 N개 추출
 
-https://leetcode.com/problems/consecutive-numbers/
 
 > LeetCode 180. Consecutive Numbers 
->
+> <img width="1425" height="625" alt="image" src="https://github.com/user-attachments/assets/2b717106-e181-4bfa-aca9-bbcf6f3d95d8" />
 > 학습 포인트 : LAG( ) 함수로 이전 값과 비교하여 연속 데이터 탐지 
 
 https://leetcode.com/problems/last-person-to-fit-in-the-bus/
 
 > LeetCode 2481. Last Person to Fit in the Bus 
->
+> <img width="1410" height="513" alt="image" src="https://github.com/user-attachments/assets/71b908d3-30de-49b1-aaa7-8eecc2152d3f" />
 > 학습 포인트 : SUM( ) OVER (ORDER BY ...) 로 누적 합계 계산 후 조건 필터링 
 
 
