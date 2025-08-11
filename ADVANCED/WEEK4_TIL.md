@@ -74,7 +74,7 @@
 - https://leetcode.com/problems/employees-earning-more-than-their-managers/ 
 
 > LeetCode 181. Employees  Earning More Than Their Managers
->
+> <img width="1439" height="503" alt="image" src="https://github.com/user-attachments/assets/6c691c4f-516d-4ae1-9560-30bed478209d" />
 > 학습 포인트 : 동일 테이블을 두 번 조인 (왜 동일 테이블을 JOIN 해야하는 문제일까)
 
 - https://leetcode.com/problems/tree-node/description/
@@ -84,7 +84,7 @@
 > 학습 포인트 : id, parent_id 기반의 트리 구조에서 **부모 ~ 자식 관계 재귀 탐색**
 >
 > Hint : (문제 해석) 
->
+> <img width="1423" height="605" alt="image" src="https://github.com/user-attachments/assets/8ade0889-2542-429d-a300-42cac45935f8" />
 > - 어떤 노드가 Root Node 이려면, 부모노드가 존재하지 않아야 한다. 
 > - 어떤 노드가 Inner Node 이려면, 나를 부모로 가지는 노드가 하나 이상 존재하여야 한다.
 >   - 그 외네는 모두 Leaf Node 이다. --> (CASE 문을 사용하는 것을 추천드립니다.)
@@ -92,9 +92,10 @@
 - https://school.programmers.co.kr/learn/courses/30/lessons/144856
 
 > 프로그래머스 : 저자 별 카테고리 별 매출액 집계하기 
->
+> 
 > 학습 포인트 : 카테고리와 서브카테고리 계층 구조를 분석하는 로직, SELF JOIN / CTE를 다 활용할 수 있다.
->
+> <img width="1435" height="453" alt="image" src="https://github.com/user-attachments/assets/f49aa542-d7b4-4880-bf82-4537281ef5e2" />
+
 > - 위에 2가지의 문제를 풀어보고 난 이후, 더 편리한 방법으로 문제를 풀어보세요.
 
 
