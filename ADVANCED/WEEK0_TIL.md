@@ -512,6 +512,9 @@ FROM (
   WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
 ) AS RecentOrders
 GROUP BY customer_id;
+
+장: 없음. 한 번만 쓰기에는 with나 서브쿼리나 비슷한듯
+단: 테이블 정의를 서브쿼리로 써야해서 구조가 복잡해짐. 테이블 여러 번 써야할 때 매번 서브쿼리 써야 해서 불편함
 ~~~
 
 
