@@ -53,7 +53,7 @@ https://leetcode.com/problems/reformat-department-table/description/
 > LeetCode. Reformat Department Table
 >
 > 학습 포인트 : MySQL 에서는 PIVOT을 쉽게 구할 수 있는 방법이 없다. 
->
+> <img width="1434" height="558" alt="image" src="https://github.com/user-attachments/assets/ea343cd4-7cb7-4dfa-8668-e1677d3311ec" />
 > - 수동으로 구하기 : CASE WHEN + 집계함수 / GROUP BY + 조건 분기 사용
 
 
@@ -75,6 +75,7 @@ https://leetcode.com/problems/reformat-department-table/description/
 - X, Y 중 하나를 행렬전환하여, K값을 행과 열의 2차원적 정보로 조회할 수 있게 한다.
 
 2) 오라클SQL에서 PIVOT 표현
+
 - 적용 전
 ​```sql
 select 컬럼이름X,
