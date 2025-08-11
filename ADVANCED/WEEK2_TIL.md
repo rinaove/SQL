@@ -1,5 +1,3 @@
-<img width="1425" height="625" alt="image" src="https://github.com/user-attachments/assets/812e5d11-6d77-4103-be95-f859c6f76a22" /># SQL_ADVANCED 2주차 정규 과제 
-
 ## Week 2 : 윈도우 함수 (Window Functions)
 
 📌**SQL_ADVANCED 정규과제**는 매주 정해진 주제에 따라 **MySQL 공식 문서 또는 한글 블로그 자료를 참고해 개념을 정리한 후, 이번 주차에는 LeetCode SQL 문제 3문제**와 **추가 확인문제**를 직접 풀어보며 학습하는 과제입니다. 
