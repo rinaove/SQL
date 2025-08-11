@@ -96,7 +96,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/131115
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
-> 15.2.15.1 The Subquery as Scalar Operand
+### 15.2.15.1 The Subquery as Scalar Operand
 * 스칼라 하위 쿼리란?
  * 한 개의 값만 반환하는 서브쿼리입니다.
  * 이 값을 마치 일반 값(숫자, 문자열 등)처럼 사용합니다.
@@ -142,7 +142,7 @@ SELECT UPPER((SELECT s1 FROM t1)) FROM t2;
 ~~~
 * UPPER(1) → 숫자 1 → 문자열 '1'로 처리됨 → 그대로 '1'
 
-> 15.2.15.2 Comparisons Using Subqueries
+### 15.2.15.2 Comparisons Using Subqueries
 * 기본형태
 ~~~sql
 비하위쿼리_피연산자 비교연산자 (하위 쿼리)
@@ -177,7 +177,7 @@ SELECT * FROM t1 As t
 | **하위 쿼리** | 바깥 쿼리의 **각 행에 대해** 서브쿼리 한 번 실행 → 그 행과 관련된 것만 카운트                     | **필요한 계산만 정확히 1회**                 |
 | **조인**    | 테이블 전체를 **자기 자신과 연결해서** 모든 경우의 수(조합)를 만든 후, 그걸 `GROUP BY`로 다시 모아 카운트 | **모든 조합을 만든 뒤 정리**, 과한 연산이 생길 수 있음 |
 
-> 15.2.15.3 Subqueries with ANY, IN, or SOME
+### 15.2.15.3 Subqueries with ANY, IN, or SOME
 * 문법
 ~~~sql
 피연산자 비교연산자 ANY (하위 쿼리)
@@ -220,7 +220,7 @@ SELECT s1 FROM t1 WHERE s1 <> ANY  (TABLE t2);
 SELECT s1 FROM t1 WHERE s1 <> SOME (TABLE t2);
 ~~~
 
-> 15.2.15.4 Subqueries with ALL
+### 15.2.15.4 Subqueries with ALL
 * `ALL`
  * 하위 쿼리가 반환하는 모든 값에 대해 비교 연산이 참이면 TRUE를 반환
  * NULL이 끼어 있으면 전체 결과는 UNKNOWN(NULL)
@@ -261,7 +261,7 @@ SELECT s1 FROM t1 WHERE s1 <> ALL (SELECT s1 FROM t2);
 SELECT s1 FROM t1 WHERE s1 NOT IN    (SELECT s1 FROM t2);
 ~~~
 
-> 15.2.15.5 Row Subqueries
+### 15.2.15.5 Row Subqueries
 * 기본 개념
  * 스칼라 서브쿼리: 값 하나만 반환 (1행 1열)
  * 컬럼 서브쿼리: 하나의 컬럼을 여러 행 반환 (1열 n행)
@@ -287,7 +287,7 @@ SELECT * FROM t1
 WHERE (col1, col2) = (SELECT col3, col4 FROM t2 WHERE id 10);
 ~~~
 
-> 15.2.15.6 Subqueries with EXISTS or NOT EXISTS
+### 15.2.15.6 Subqueries with EXISTS or NOT EXISTS
 * 기본 개념
 * 하위 쿼리가 하나라도 행을 반환하면
  * → EXISTS 조건은 TRUE
@@ -334,7 +334,7 @@ WHERE NOT EXISTS (
  * 조건2: 근데 이 city값은 citiesstores에서 city값과 store_type이 없으면 출력되긴 해
  * 의도: 조건2의 값이 없어야 조건1이 출력됨 = 모든 city에 해당 유형이 잆다는 것
 
-> 15.2.15.7 Correlated Subqueries
+### 15.2.15.7 Correlated Subqueries
 * 기본 개념
  * 상관 서브쿼리는 서브쿼리 안에서 외부 쿼리의 테이블 값을 참조하는 서브쿼리
  * 예시 문제에서는 t1이 서브쿼리 내 참조하는 테이블이 되고 있음 (서브 쿼리에서는 t2가 기준 테이블이기에)
@@ -394,17 +394,6 @@ WHERE derived.a > 0;
 | 상관 컬럼 사용 위치     | WHERE 절 안에서만 허용 (SELECT, GROUP BY 등에서는 ❌) |
 | 서브쿼리 안에 집계 함수   | 외부 블록 참조하면 ❌                              |
 | COUNT()         | 반드시 맨 바깥쪽 SELECT 리스트 안에만 허용               |
-
-
-> 15.2.15.8 Derived Tables
-
-> 15.2.15.9 Lateral Derived Tables
-
-> 15.2.15.10 Subquery Errors
-
-> 15.2.15.11 Optimizing Subqueries
-
-> 15.2.15.12 Restrictions on Subqueries
 
 
 
